@@ -1,0 +1,34 @@
+<p>aaa</p>
+<p>aa</p>
+<div width="200px" padding="200px" height="500px">
+<form #f="ngForm">
+    <label>Donnez identifiant</label>
+    <input type="number" id="n" name="identifiant" class="form-control"[(ngModel)]="identifiant" required #id="ngModel"/>
+    <div *ngIf="id.invalid && id.dirty"
+    class="alert alert-danger">
+    Le identifiant doit être  obligatoire
+    </div>
+    
+    <label>Donnez Categorie</label>
+    <input type="text" id="n" name="Categorie" class="form-control" [(ngModel)]="nom" required #ca="ngModel"/>
+    <div *ngIf="ca.invalid && ca.dirty"
+    class="alert alert-danger">
+    La categorie doit être obligatoire
+    </div>
+    <label>Donnez prix</label>
+    <input type="number" id="n" name="prix" class="form-control"[(ngModel)]="prix" required #pr="ngModel"/>
+    <div *ngIf="pr.invalid && pr.dirty"
+    class="alert alert-danger">
+    Le Prix doit être un nombre
+    </div>
+    <label>Donnez marque</label>
+    <input type="text" id="n" name="marque" class="form-control" [(ngModel)]="marque" required #mar="ngModel"/>
+    <div *ngIf="mar.invalid && mar.dirty"
+    class="alert alert-danger">
+    la marque doit être Obligatoire
+    </div>
+    <label>Donnez Date</label>
+    <input type="date" id="n" name="date" class="form-control" [(ngModel)]="date" required #dat="ngModel"/>
+    <button (click)="modifier()">Modifier</button>
+    </form>
+    </div>

@@ -1,0 +1,5 @@
+<div style="background-image:url('../assets/background.jpg'); background-repeat: repeat;background-position: fixed;">
+    <app-authentification *ngIf='service.auth==false'></app-authentification>
+    <router-outlet *ngIf='service.auth==true'></router-outlet>
+    <app-menu *ngIf='service.auth==true'></app-menu>
+</div>

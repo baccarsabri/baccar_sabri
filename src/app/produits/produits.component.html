@@ -1,0 +1,49 @@
+<div width="200px" padding="200px" height="500px">
+<h2 class="text-center text-uppercase m-4" class="c" >Nos Produits</h2>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4" >
+        <h3 class="text-muted" >Pc Portable</h3>
+        <div *ngFor="let t of pc">
+        <img width="300px" height="400px" [src]="t._image" 
+         class="img-fluid img-thumbnail"/>
+         <p>identifiant:<span class="text-muted">{{t.identifiant}}</span></p>
+         <p>{{t.nom}}:{{t.marque |uppercase}}</p>
+        <p>{{t.prix | pipe}}</p>
+       <p> <a [routerLink]="['/produits',t.identifiant]"> Détail</a> </p>
+       <button (click)="SupprimerPc(t.identifiant)">Supprimer</button>
+        </div>
+
+      </div>
+      <div class="col-sm-4">
+        <h3 class="text-muted">Imprimantes</h3>
+        <div *ngFor="let n of imprimante">
+        <img width="200px" height="200px" [src]="n._image" 
+         class="img-fluid img-thumbnail"/>
+         <p>identifiant:<span class="text-muted">{{n.identifiant}}</span></p>
+          <p>{{n.nom}}:{{n.marque  |uppercase}}</p>
+          <p>{{n.prix | pipe}}</p>
+          <p > <a [routerLink]="['/produits',n.identifiant]"> Détail</a> </p>
+          <button (click)="SupprimerIm(n.identifiant)">Supprimer</button>
+          </div>
+        
+      </div>
+      <div class="col-sm-4">
+        <h3 class="text-muted" >Clavier</h3>
+        <div *ngFor="let c of clavier">
+        <img width="300px" height="300px" [src]="c._image"  
+        class="img-fluid img-thumbnail"/>
+        <p>identifiant:<span class="text-muted">{{c.identifiant}}</span></p>
+        <p>{{c.nom}}:{{c.marque  |uppercase}}</p>
+        <p>{{c.prix | pipe}}</p>
+        <p > <a [routerLink]="['/produits',c.identifiant]"> Détail</a> </p>
+        <button (click)="SupprimerCl(c.identifiant)">Supprimer</button>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+   
+
